@@ -43,13 +43,14 @@ The server acts as a strict headless JSON API layer, utilizing an enterprise ser
 Create a localized environment file inside the root server folder containing these explicit string mappings:
 
 ```env
-PORT=3000
-MONGO_URI=mongodb+srv://<db_user>:<db_pass>@cluster0.mongodb.net/interview_master?retryWrites=true&w=majority
-JWT_SECRET=your_high_entropy_cryptographic_hex_key
-GEMINI_API_KEY=AIzaSy...your_google_ai_studio_native_key
+PORT=1236
+MONGO_URI=your_mongodb_uri_for_databse
+JWT_SECRET=long_jwt_key
+GEMINI_API_KEY=your_google_gemini_ai_key
 
 # Execute package manager sync to pull structural modules
 npm install
 
 # Initialize development runtime environment engine via Nodemon compilation
 npm run dev
+npx nodemon server.js
