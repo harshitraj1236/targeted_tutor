@@ -62,3 +62,54 @@ This repository contains the decoupled, highly structured client-side applicatio
 ## 🏗️ Architectural Pattern: 4-Layer System
 
 To cleanly decouple state mutations, business operations, and presentation layouts, the codebase enforces a strict **4-Layer Architectural System**. This standard keeps operational layers entirely isolated from the raw view hierarchy.
+
+### 1. UI Layer (`/components`, `/pages`)
+* **Role:** Dictates functional structural bindings and triggers semantic events.
+* **Execution Boundary:** Uses strict components to handle two-way data bindings (`useState`) and binary inputs (`useRef` context streams) without carrying underlying domain or fetch operations directly.
+
+### 2. Hook Layer (`/hooks`)
+* **Role:** The functional orchestrator. Operates as custom hooks (e.g., `useAuth`, `useInterview`).
+* **Execution Boundary:** Manages sequential operational side effects (like setting local loading states to `true`), initiates underlying backend asynchronous requests, captures responses, updates central states, and forces programmatic view routing triggers via `react-router`.
+
+### 3. State Layer (`/context`)
+* **Role:** System memory and global context domains.
+* **Execution Boundary:** Implements localized React Context Providers (`AuthContext`, `InterviewContext`) acting as long-lived runtime storage blocks that safely hydrate ongoing data state schemas across cross-component cycles.
+
+### 4. API Layer (`/services`)
+* **Role:** Isolated transport boundary using an Axios interface wrapper.
+* **Execution Boundary:** Standardizes target backend connection vectors. Configured globally with `withCredentials: true` flags to force browser engines to seamlessly bind security token wrappers directly inside automated HTTP-Only cookie cycles.
+
+---
+
+## 🛠️ Global Application State Properties
+
+The runtime memory layout actively traces the following structural definitions via React Context providers:
+
+* **Authentication State Matrix:**
+  * `user` (Object/Null: Contains decoded identification fields `id`, `username`, `email`)
+  * `loading` (Boolean: Monitors re-hydration token validations)
+
+* **Interview State Matrix:**
+  * `report` (Object/Null: Direct payload representation tracking active gaps, questions, and matching scores)
+  * `reports` (Array: Collection array summarizing historical assessment meta-maps)
+  * `loading` (Boolean: Tracks long-lived asynchronous GenAI parsing execution loops)
+
+---
+
+## 🚀 Client Ingestion & Initialization
+
+### 1. Core Build Dependencies
+The system relies on these primary structural operational modules:
+* `react-router` - Dynamic route parsing and URL state extraction (`useParams`).
+* `axios` - Promise-based async networking pipeline with default interceptor bindings.
+* `sass` - Dynamic styling abstraction layers.
+
+### 2. Startup Execution Commands
+```
+# Pull structural node modules
+npm install
+
+# Initialize Vite development compilation environment
+npm run dev
+
+```
