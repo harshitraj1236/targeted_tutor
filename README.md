@@ -54,3 +54,14 @@ npm install
 # Initialize development runtime environment engine via Nodemon compilation
 npm run dev
 npx nodemon server.js
+
+
+
+# AI-Powered Interview Preparation Platform (Frontend Core)
+
+This repository contains the decoupled, highly structured client-side application for the GenAI Interview Preparation engine. Built on React, Vite, and Sass, the platform implements strict client-side data orchestration patterns to parse asynchronous stream returns, coordinate multipart binary form transfers, securely hook local session cookies, and handle multi-tab operational states.
+
+## 🏗️ Architectural Pattern: 4-Layer System
+
+To cleanly decouple state mutations, business operations, and presentation layouts, the codebase enforces a strict **4-Layer Architectural System**. This standard keeps operational layers entirely isolated from the raw view hierarchy.
+
