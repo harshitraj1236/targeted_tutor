@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react"
 import { useParams } from "react-router"
-import { getAllInterviewReports, generateInterviewReport, getInterviewReportById, generateResumePdf } from "../services/interview.api"
+import { getInterviewReport, getInterviewReportById, getAllInterviewReport, generateResumePdf } from "../services/interview.api"
 
-export const useInerview = () => {
+export const useInterview = () => {
     const context = useContext(IntetviewContext)
     const { interviewId } = useParams()
 
