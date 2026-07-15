@@ -89,7 +89,7 @@ const login = () => {
                 className="w-full bg-white text-gray-900 rounded-md px-4 py-2 focus:outline-none"
               />
             </div>
-            <button className="animate w-full bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-md py-3 shadow-lg transition-colors mt-2">
+            <button type="submit" className="animate w-full bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-md py-3 shadow-lg transition-colors mt-2">
               Login
             </button>
           </form>
